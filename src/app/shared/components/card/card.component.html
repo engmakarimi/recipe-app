@@ -1,0 +1,15 @@
+<ng-container *ngIf="recipe">
+  <div class="image-box">
+    <img [src]="recipe.imageUrl" width="100" height="100" alt="" />
+  </div>
+  <div class="recipe__content">
+    <h2>{{ recipe.title }}</h2>
+    <p class="recipe__tags" >
+
+      <span class="recipe__tag" *ngFor="let tag of recipe.tags">
+        {{tag}} |
+      </span>
+    </p>
+    <ng-content [saveBtn]></ng-content>
+  </div>
+</ng-container>

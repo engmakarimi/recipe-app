@@ -1,0 +1,14 @@
+<app-header>
+    <div class="header__container">
+    <div logo class="header__left">
+        <span class="header__title"> Recipes Application</span>
+        <img src="/assets/logo/logo.png">
+    </div>
+    <button class="btn btn-header" [matBadge]="myRecipeNumbers$|async" link routerLink="/my-recipes"  routerLinkActive="active">
+       <span class="btn-header__title">My Recipes</span> 
+    </button>
+</div>
+</app-header>
+<main >
+<router-outlet></router-outlet>
+</main>

@@ -1,0 +1,56 @@
+$primary-color: #fff;
+$border-radius: 5px;
+$black-color: #351897;
+
+
+.image-box {
+    img {
+        width: 20rem;
+        height: 25rem;
+        border-radius: $border-radius 0 0 $border-radius;
+        object-fit: cover;
+        object-position: 50% 50%;
+    }
+}
+
+:host {
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: row;
+    min-width: 40rem;
+    width: 99%;
+    height: 25rem;
+    border-radius: $border-radius;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
+
+   
+
+}
+.recipe{
+    &__content {
+        padding: 1rem ;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        width: 99%;
+
+        
+        h2 {
+            font-weight: 500;
+        }
+    }
+
+    &__tags {
+        margin:0.5rem;
+    }
+
+    &__tag {
+        display: inline-block;
+        margin: 2px;
+        font-size: .875em;
+        text-transform: uppercase;
+        letter-spacing: .02em;
+    }
+
+}

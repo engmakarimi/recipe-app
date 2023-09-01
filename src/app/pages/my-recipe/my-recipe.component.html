@@ -1,0 +1,20 @@
+<div class="recipe__back">
+  <h1>
+    <a routerLink="/all-recipes">
+      <mat-icon>arrow_back</mat-icon>Back to Recipes</a
+    >
+  </h1>
+</div>
+<div class="recipe__list">
+  <app-card *ngFor="let item of myRecipes$ | async" [recipe]="item">
+    <button
+      class="btn"
+      type="button"
+      (click)="addToMyRecipe(item.id)"
+      [ngClass]="{ 'btn-saved': item.isSaved, 'btn-unsaved': !item.isSaved }"
+      saveBtn
+    >
+      <mat-icon>bookmark</mat-icon> {{ item.isSaved ? "Save" : "Unsaved" }}
+    </button>
+  </app-card>
+</div>

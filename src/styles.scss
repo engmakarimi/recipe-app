@@ -1,7 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 *,*::after,*::before{
     padding: 0;
     margin: 0;
@@ -16,4 +14,46 @@ body {
 html{
     // This defines what 1rem is
     font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+    color:  #351897;
+}
+.btn {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    padding: 1rem 0.8rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+
+    &-saved {
+        border: 2px solid  #E08702;
+        background-color:  #E08702;
+        color: #fff;
+    }
+
+    &-unsaved {
+        border: 2px solid #fff;
+        background-color: #fff;
+        color:  #E08702;
+       
+    }
+    &-header{
+        border: 2px solid  #E08702;
+        background-color:  rgb(253, 215, 168);
+        color: #351897;
+        &__title{
+            font-weight: 600;
+        }
+    }
+
+   
+}
+.recipe__list {
+        
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
 }
