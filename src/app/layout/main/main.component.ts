@@ -5,8 +5,8 @@ import { HeaderComponent } from '../header/header.component';
 import { RouterLink, RouterOutlet,RouterLinkActive } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatBadgeModule } from '@angular/material/badge';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ApiRecipeService } from 'src/app/shared/services';
+import { MaterialLoadinngComponent } from 'src/app/shared/components';
 
 @Component({
   standalone: true,
@@ -18,7 +18,7 @@ import { ApiRecipeService } from 'src/app/shared/services';
     HeaderComponent,
     MatButtonModule,
     MatBadgeModule,
-    MatProgressSpinnerModule,
+    MaterialLoadinngComponent
   ],
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],

@@ -10,15 +10,12 @@ import {
   delay,
   switchMap,
 } from 'rxjs';
-import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiRecipeService {
-  storageService = inject(StorageService);
-
- private isLoading = new BehaviorSubject<boolean>(false);
+  private isLoading = new BehaviorSubject<boolean>(false);
 
   setLoadingState(state: boolean) {
     this.isLoading.next(state);
@@ -35,8 +32,7 @@ export class ApiRecipeService {
   get RawRecipeList$() {
     this.setLoadingState(true);
     return of(null).pipe(
-      
-      tap(() => (this.setLoadingState(false))),
+      tap(() => this.setLoadingState(false)),
       switchMap(() => this.rawRecipeList$)
     );
   }
@@ -65,5 +61,4 @@ export class ApiRecipeService {
       return item;
     });
   }
-  
 }

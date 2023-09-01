@@ -6,6 +6,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import {
   GlobalErrorHandlerService,
   InterceptorErrorHandlerService,
+  InterceptorLoadingHandlerService,
 } from './shared/middlewares';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -20,6 +21,10 @@ export const appConfig: ApplicationConfig = {
       useClass: InterceptorErrorHandlerService,
       multi: true,
     },
-
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorLoadingHandlerService,
+      multi: true,
+    },
   ],
 };
